@@ -1,6 +1,6 @@
+import 'package:cute_doggo/state_machine_controller_x.dart';
 import 'package:flutter/gestures.dart'
     show Offset, PointerDeviceKind, TapDownDetails;
-import 'package:interactive_desktop_widget/state_machine_controller_x.dart';
 import 'package:rive/rive.dart';
 
 /// Controller for an interactive avatar.

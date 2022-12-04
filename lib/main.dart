@@ -1,7 +1,7 @@
 import 'package:bitsdojo_window/bitsdojo_window.dart';
+import 'package:cute_doggo/avatar_scene.dart';
+import 'package:cute_doggo/cached_future_builder.dart';
 import 'package:flutter/material.dart';
-import 'package:interactive_desktop_widget/avatar_scene.dart';
-import 'package:interactive_desktop_widget/cached_future_builder.dart';
 import 'package:rive/rive.dart';
 
 void main() {

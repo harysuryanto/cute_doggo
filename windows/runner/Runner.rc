@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "interactive_desktop_widget" "\0"
+            VALUE "CompanyName", "id.harysuryanto" "\0"
+            VALUE "FileDescription", "cute_doggo" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "interactive_desktop_widget" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2022 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "interactive_desktop_widget.exe" "\0"
-            VALUE "ProductName", "interactive_desktop_widget" "\0"
+            VALUE "InternalName", "cute_doggo" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2022 id.harysuryanto. All rights reserved." "\0"
+            VALUE "OriginalFilename", "cute_doggo.exe" "\0"
+            VALUE "ProductName", "cute_doggo" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

@@ -1,5 +1,5 @@
+import 'package:cute_doggo/rive_avatar.dart';
 import 'package:flutter/material.dart';
-import 'package:interactive_desktop_widget/rive_avatar.dart';
 import 'package:rive/rive.dart';
 
 /// A scene with an avatar from which tap/cursor position data is taken.
