@@ -1,20 +1,19 @@
 import 'package:bitsdojo_window/bitsdojo_window.dart';
-import 'package:fluent_ui/fluent_ui.dart' hide MenuItem;
-import 'package:flutter/material.dart' show Icons;
-import 'package:flutter_acrylic/flutter_acrylic.dart';
+import 'package:flutter/material.dart';
 import 'package:interactive_desktop_widget/avatar_scene.dart';
 import 'package:interactive_desktop_widget/cached_future_builder.dart';
 import 'package:rive/rive.dart';
 
-void main() async {
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  await Window.initialize();
-  await Window.setEffect(effect: WindowEffect.transparent);
   runApp(const MyApp());
   doWhenWindowReady(() {
-    appWindow.title = 'Interactive Desktop Widget';
+    const windowSize = Size(300, 200);
+    appWindow.size = windowSize;
+    appWindow.minSize = windowSize;
+    appWindow.maxSize = windowSize;
+    appWindow.title = 'Cute Doggo';
     appWindow.alignment = Alignment.bottomRight;
-    appWindow.size = const Size(300, 200);
     appWindow.show();
   });
 }
@@ -24,8 +23,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const FluentApp(
-      title: 'Interactive Desktop Widget',
+    return const MaterialApp(
+      title: 'Cute Doggo',
       home: HomePage(),
     );
   }
@@ -40,6 +39,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   bool isHovered = false;
+  bool isDraggable = false;
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +47,7 @@ class _HomePageState extends State<HomePage> {
       onEnter: (_) => setState(() => isHovered = true),
       onExit: (_) => setState(() => isHovered = false),
       child: GestureDetector(
-        onPanStart: (details) => appWindow.startDragging(),
+        onPanStart: isDraggable ? (_) => appWindow.startDragging() : null,
         child: Stack(
           children: [
             Positioned.fill(
@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
                       final artboard = snapshot.data?.mainArtboard;
                       return AvatarScene(artboard);
                     }
-                    return const ProgressRing();
+                    return const CircularProgressIndicator.adaptive();
                   },
                 ),
               ),
@@ -71,9 +71,25 @@ class _HomePageState extends State<HomePage> {
               Positioned(
                 top: 0,
                 right: 0,
-                child: TextButton(
-                  onPressed: () => appWindow.close(),
-                  child: const Icon(Icons.close_rounded, size: 24),
+                child: Material(
+                  color: Colors.transparent,
+                  child: PopupMenuButton(
+                    itemBuilder: (_) => [
+                      PopupMenuItem(
+                        onTap: () => setState(() {
+                          isDraggable = !isDraggable;
+                        }),
+                        child: isDraggable
+                            ? const Text('Disable dragging')
+                            : const Text('Enable dragging'),
+                      ),
+                      PopupMenuItem(
+                        onTap: () => appWindow.close(),
+                        child: const Text('Close (´•̥ᴥ•̥`U)'),
+                      ),
+                    ],
+                    icon: const Icon(Icons.more_horiz_rounded),
+                  ),
                 ),
               ),
           ],
