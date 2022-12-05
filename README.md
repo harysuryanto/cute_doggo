@@ -7,4 +7,5 @@ Cute doggo in your desktop.
 Download [here](https://github.com/harysuryanto/cute_doggo/releases).
 
 ## Credits
-<a href="https://www.flaticon.com/free-icons/labrador-retriever" title="labrador retriever icons">Labrador retriever icons created by MrHamster - Flaticon</a>
+- [Rive 2 — 2.5D Avatar With Pointer Tracking Using Flutter](https://betterprogramming.pub/rive-2-2-5d-avatar-with-pointer-tracking-6ea069df2fa)
+- <a href="https://www.flaticon.com/free-icons/labrador-retriever" title="labrador retriever icons">Labrador retriever icons created by MrHamster - Flaticon</a>
